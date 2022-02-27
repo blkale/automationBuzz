@@ -1,0 +1,27 @@
+package com.test.signup;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+import com.velo.config.Configuration;
+
+public class TestLogin {
+	
+	public static void main(String[] arg) {
+		System.setProperty("webdriver.chrome.driver", Configuration.driverPath);
+		WebDriver driver=new ChromeDriver();
+		driver.get(Configuration.fbLogin);
+		driver.manage().window().maximize();
+		
+		LoginPOM log=new LoginPOM(driver);
+		
+		log.email();
+		log.pass();
+		log.login();
+				
+				
+				
+		//driver.close();		
+	}
+
+}
